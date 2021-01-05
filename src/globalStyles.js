@@ -31,6 +31,11 @@ export default createGlobalStyle`
   footer, header, hgroup, menu, nav, section {
     display: block;
   }
+  html, body {
+    box-sizing: border-box;
+    background-color: rgb(250, 250, 250);
+    font-family: 'Roboto'
+  }
   body {
     line-height: 1;
   }
@@ -48,5 +53,13 @@ export default createGlobalStyle`
   table {
     border-collapse: collapse;
     border-spacing: 0;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 680px;
+    width: 100%;
   }
 `;

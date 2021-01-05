@@ -3,12 +3,16 @@ import ReactDOM from 'react-dom';
 
 import Global from './globalStyles';
 import Routes from './routes';
+import CarsContext from './Context/CarsContext';
+
 
 ReactDOM.render(
   <React.StrictMode>
     <>
-      <Global />
-      <Routes />
+      <CarsContext>
+        <Global />
+        <Routes />
+      </CarsContext>
     </>
   </React.StrictMode>,
   document.getElementById('root')
