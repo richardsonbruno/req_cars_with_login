@@ -11,6 +11,18 @@ function CarList() {
     )
   }
 
+  if (cars.cars.length === 0 && loading === false) {
+    return (
+      <Container>
+        <img src="https://api.b7web.com.br/carros/media/default.jpg" alt="" />
+
+        <div>
+          <h1>Não possui carros cadastrado</h1>
+        </div>
+      </Container> 
+    )
+  }
+
   return (
     <ListCard>
       {cars.cars.map((car, index) => {

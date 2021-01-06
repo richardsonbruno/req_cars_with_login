@@ -31,13 +31,16 @@ export default createGlobalStyle`
   footer, header, hgroup, menu, nav, section {
     display: block;
   }
-  html, body {
+  *,*::after,*::before {
     box-sizing: border-box;
+  }
+  html, body {
     background-color: rgb(250, 250, 250);
     font-family: 'Roboto'
   }
   body {
     line-height: 1;
+    padding-top: 70px;
   }
   ol, ul {
     list-style: none;
