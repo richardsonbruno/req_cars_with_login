@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { Cars } from '../../Context/CarsContext';
+import { Auth } from '../../Context/AuthContext';
 import { Container, Menu } from './styles'
 
 function Header() {
   const { setYear } = useContext(Cars);
+  const { user, signOut } = useContext(Auth);
 
   return (
     <Container>
@@ -24,8 +26,17 @@ function Header() {
         </select>
 
         <Menu>
-          <Link to='/login'>Login</Link>
-          <Link to='/register'>Cadastrar</Link>
+          {user === null ? (
+            <>
+              <Link to='/login'>Login</Link>
+              <Link to='/register'>Cadastrar</Link>
+            </>
+          ) : (
+            <>
+              <Link to='/add'>Adicionar Carro</Link>
+              <Link onClick={signOut}>sair</Link>
+            </>
+          )}
         </Menu>
       </div>
     </Container>
