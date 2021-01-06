@@ -5,7 +5,7 @@ import { Auth } from '../../Context/AuthContext';
 import { Form } from '../Login/styles';
 
 function Login() {
-  const { user, loading } = useContext(Auth);
+  const { user, register, loading } = useContext(Auth);
   const history = useHistory();
 
   const [username, setUsername] = useState('');
@@ -18,6 +18,7 @@ function Login() {
 
   const handleLoginChange = (e) => {
     e.preventDefault();
+    register(username, email, password);
   }
 
   return (

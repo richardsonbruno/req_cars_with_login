@@ -10,5 +10,10 @@ export default {
   loginCars: async (email, password) => {
     const { data: json } = await API.post(`auth/login`, { email, password });
     return json;
+  },
+
+  registerUser: async (name, email, password) => {
+    const { data: json } = await API.post(`auth/register`, { name, email, password });
+    return json;
   }
 }
